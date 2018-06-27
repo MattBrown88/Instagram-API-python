@@ -127,6 +127,9 @@ class InstagramAPI:
     def timelineFeed(self):
         return self.SendRequest('feed/timeline/')
 
+    def collectionsList(self):
+        return self.SendRequest('collections/list/')
+
     def megaphoneLog(self):
         return self.SendRequest('megaphone/log/')
 
@@ -1050,3 +1053,7 @@ class InstagramAPI:
             except KeyError as e:
                 break
         return liked_items
+    
+    def getCollections(self):
+        self.collectionsList()
+        return self.LastJson
