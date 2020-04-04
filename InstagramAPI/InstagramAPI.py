@@ -658,6 +658,9 @@ class InstagramAPI:
 
     def getSelfSavedMedia(self):
         return self.SendRequest('feed/saved')
+    
+    def getSelfSavedMediaByCollection(self, collection_id):
+        return self.SendRequest('feed/collection/' + collection_id + '/')
 
     def getRecentActivity(self):
         activity = self.SendRequest('news/inbox/?')
